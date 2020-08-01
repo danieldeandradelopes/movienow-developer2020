@@ -1,25 +1,25 @@
-import React, { Component } from 'react';
-import { Navbar, Nav, Button } from 'react-bootstrap';
+import React from 'react';
+import { Button, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { StyledNav } from './styles';
 
-class Header extends Component {
-  state = {};
-
-  render() {
-    return (
-      <Navbar bg="light" expand="lg">
+function Header() {
+  return (
+    <Navbar bg="light" expand="lg">
+      <Link to="/">
         <Navbar.Brand href="#">Movie Now</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto" style={{ marginLeft: '80%' }}>
-            <Nav>Bem vindo, Daniel </Nav>
-          </Nav>
-          <Nav>
-            <Button variant="outline-danger">Sign Out</Button>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-    );
-  }
+      </Link>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <StyledNav className="mr-auto">
+          <Nav>Bem vindo, Daniel </Nav>
+        </StyledNav>
+        <Nav>
+          <Button variant="outline-danger">Sign Out</Button>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+  );
 }
 
 export default Header;
